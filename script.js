@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 复选框交互
     document.querySelectorAll('.checklist input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
+            playCheckSound();
             const label = this.nextElementSibling;
             if (this.checked) {
                 label.style.textDecoration = 'line-through';
@@ -435,4 +436,66 @@ style.textContent = `
         overflow: hidden;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// 轻快的check音效
+function playCheckSound() {
+    try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = 880;
+        gain.gain.value = 0.12;
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.frequency.linearRampToValueAtTime(1760, ctx.currentTime + 0.08);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.12);
+        osc.stop(ctx.currentTime + 0.12);
+        osc.onended = () => ctx.close();
+    } catch (e) {}
+}
+
+// 作品gallery动态加载gif（初始静止，点击后播放）
+const worksGallery = document.getElementById('worksGallery');
+if (worksGallery) {
+    // 静态图和gif一一对应
+    const works = [
+        { still: 'theworks/1.jpg', gif: 'theworks/1.gif' },
+        { still: 'theworks/2.jpg', gif: 'theworks/2.gif' },
+        { still: 'theworks/3.jpg', gif: 'theworks/3.gif' }
+    ];
+    works.forEach((work, idx) => {
+        const card = document.createElement('div');
+        card.className = 'works-card';
+        // 静止图
+        const still = document.createElement('img');
+        still.src = work.still;
+        still.alt = `work${idx+1}`;
+        still.style.width = '100%';
+        still.style.height = '100%';
+        still.style.objectFit = 'contain';
+        still.draggable = false;
+        // 遮罩
+        const mask = document.createElement('div');
+        mask.className = 'works-mask';
+        mask.innerHTML = `<div class=\"works-click-icon\">👉</div>`;
+        // 点击遮罩后播放gif
+        mask.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const gifImg = document.createElement('img');
+            gifImg.src = work.gif + '?t=' + Date.now();
+            gifImg.alt = still.alt;
+            gifImg.style.width = '100%';
+            gifImg.style.height = '100%';
+            gifImg.style.objectFit = 'contain';
+            gifImg.draggable = false;
+            card.replaceChild(gifImg, still);
+            mask.classList.add('hide');
+        });
+        card.appendChild(still);
+        card.appendChild(mask);
+        worksGallery.appendChild(card);
+    });
+} 

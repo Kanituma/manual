@@ -545,9 +545,10 @@ section h2::after {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    justify-items: center;
 }
 
 /* 关于我们区域 */
@@ -1079,4 +1080,59 @@ input[type="checkbox"]:checked + label {
     #videoPlayer {
         border-radius: 8px;
     }
+}
+
+/* 作品gallery卡片样式 */
+.works-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: #fff;
+    margin: 0 auto;
+    max-width: 320px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.works-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #e3f6fd;
+    pointer-events: none;
+}
+.works-mask {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,191,255,0.5) 0%, rgba(0,255,128,0.5) 50%, rgba(255,255,0,0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.works-mask.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+.works-click-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    font-size: 2rem;
+    color: #00b894;
+    animation: click-bounce 1.2s infinite;
+}
+@keyframes click-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 } 
