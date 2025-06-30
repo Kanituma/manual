@@ -1,3 +1,46 @@
+// 视频播放功能 - 全局函数
+function playVideo(type) {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoSource = document.getElementById('videoSource');
+    
+    // 根据类型设置视频源
+    if (type === 'jump') {
+        videoSource.src = 'videos/Jump.mp4'; // 跳转视频文件
+    } else if (type === 'sway') {
+        videoSource.src = 'videos/Sway.mp4'; // 摇摆视频文件
+    }
+    
+    // 显示弹窗并播放视频
+    modal.style.display = 'block';
+    videoPlayer.load();
+    videoPlayer.play();
+    
+    // 阻止背景滚动
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    
+    // 隐藏弹窗并停止视频
+    modal.style.display = 'none';
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+    
+    // 恢复背景滚动
+    document.body.style.overflow = 'auto';
+}
+
+// 点击弹窗外部关闭
+window.onclick = function(event) {
+    const modal = document.getElementById('videoModal');
+    if (event.target === modal) {
+        closeVideo();
+    }
+}
+
 // 导航栏交互
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
@@ -340,29 +383,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.opacity = '1';
         }, 100);
     });
-
-    // 演示按钮点击事件
-    // Jump按钮
-    const jumpBtn = document.getElementById('jumpBtn');
-    if (jumpBtn) {
-        jumpBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // TODO: 在这里添加Jump的YouTube链接
-            // window.open('YOUR_JUMP_YOUTUBE_LINK', '_blank');
-            alert('Jump视频链接将在这里添加！');
-        });
-    }
-
-    // Slide按钮
-    const slideBtn = document.getElementById('slideBtn');
-    if (slideBtn) {
-        slideBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // TODO: 在这里添加Slide的YouTube链接
-            // window.open('YOUR_SLIDE_YOUTUBE_LINK', '_blank');
-            alert('Slide视频链接将在这里添加！');
-        });
-    }
 });
 
 // 添加移动端菜单样式和波纹动画

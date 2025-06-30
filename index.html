@@ -99,14 +99,14 @@
                         <h3>うごきをかんじる<br><span class="step-subtitle">Feel the Motion</span></h3>
                         <p>まず、不思議な「うごき」をじっくり観察してみましょう。これは答えを探す時間ではありません。「この動き、何かに似ているかな？」「どんな気持ちになるかな？」と感じるままに、想像力を自由に羽ばたかせる時間です。これが、すべての物語の最初のタネになります。</p>
                         <div class="demo-buttons">
-                            <a href="#" class="btn btn-demo btn-jump" id="jumpBtn">
+                            <button class="btn btn-demo btn-jump" id="jumpBtn" onclick="playVideo('jump')">
                                 <span class="btn-icon">🦘</span>
                                 <span class="btn-text">ぴょんぴょん (Jump)</span>
-                            </a>
-                            <a href="#" class="btn btn-demo btn-slide" id="slideBtn">
+                            </button>
+                            <button class="btn btn-demo btn-slide" id="slideBtn" onclick="playVideo('sway')">
                                 <span class="btn-icon">🛷</span>
                                 <span class="btn-text">ゆらゆら (Sway)</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="step">
@@ -257,5 +257,16 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- 视频弹窗 -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close" onclick="closeVideo()">&times;</span>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+    </div>
 </body>
 </html> 

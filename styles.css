@@ -983,4 +983,100 @@ input[type="checkbox"]:checked + label {
     font-weight: 400;
     text-align: center;
     font-family: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'HiraginoMaru', 'KodomoRounded', sans-serif;
+}
+
+/* 视频弹窗样式 */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.video-modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    background: #dc3545;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.video-close:hover {
+    background: #c82333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+#videoPlayer {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #000;
+}
+
+/* 移动端视频弹窗优化 */
+@media (max-width: 768px) {
+    .video-modal-content {
+        margin: 5% auto;
+        width: 90%;
+        padding: 15px;
+        max-width: none;
+    }
+    
+    .video-close {
+        right: 10px;
+        top: 5px;
+        font-size: 24px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-modal-content {
+        margin: 2% auto;
+        width: 95%;
+        padding: 10px;
+        max-width: none;
+    }
+    
+    .video-close {
+        right: 8px;
+        top: 3px;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    #videoPlayer {
+        border-radius: 8px;
+    }
 } 
