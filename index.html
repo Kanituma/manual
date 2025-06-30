@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movook: うごきから、物語をはじめよう。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>Movook</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#setup">準備</a></li>
+                    <li><a href="#gameflow">遊び方</a></li>
+                    <li><a href="#tips">ヒント</a></li>
+                    <li><a href="#troubleshooting">トラブル</a></li>
+                    <li><a href="#gallery">作品</a></li>
+                    <li><a href="#about">私たち</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ホームセクション -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Movook: うごきから、物語をはじめよう。</h1>
+                <p>一枚の紙、一つの動き、そして無限の物語。Movookは、あなたとお子さんの想像力が主役になる、新しい絵本体験です。</p>
+                <div class="hero-buttons">
+                    <a href="#setup" class="btn btn-primary">さあ、始めよう</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 準備セクション -->
+        <section id="setup" class="setup-section">
+            <div class="container">
+                <h2>かんたんセットアップ</h2>
+                <div class="setup-content">
+                    <div class="checklist">
+                        <h3>準備するもの</h3>
+                        <div class="ok-badge" id="okBadge">OK!</div>
+                        <ul>
+                            <li><input type="checkbox" id="item1"><label for="item1">Movookボード（緑色の基板）</label></li>
+                            <li><input type="checkbox" id="item2"><label for="item2">電源ケーブル</label></li>
+                            <li><input type="checkbox" id="item3"><label for="item3">「モーション・デモ」の短い動画</label></li>
+                            <li><input type="checkbox" id="item4"><label for="item4">ムーブキット（磁石が入った小さなプラスチックのパーツ）</label></li>
+                            <li><input type="checkbox" id="item5"><label for="item5">工作セット（色画用紙のパーツ、ペン、スティックのり）</label></li>
+                            <li><input type="checkbox" id="item6"><label for="item6">作業しやすい、広めのテーブルや床</label></li>
+                        </ul>
+                    </div>
+                    <div class="setup-steps" id="setupSteps">
+                        <h3>事前準備</h3>
+                        <ol>
+                            <li>Movookボードを平らな場所に置きます。</li>
+                            <li>背景紙をボードの上にセットし、ムーブキットを星のマーク（★）の上に置いてみましょう。</li>
+                            <li>電源ケーブルを差し込みます。青いチップの小さなライトが点灯すると、ムーブキットが動き始めます。</li>
+                            <li>動きができることを確認してから、始めよう！</li>
+                        </ol>
+                        <div class="important-notice">
+                            <p><strong>【大切な注意】</strong>現時点のバージョンでは、長時間電源を繋いだままにできません。安全のため、2分ほど動かしたら一度ケーブルを抜いて、少し休ませてください。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-navigation">
+                    <a href="#home" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">ホーム</span>
+                    </a>
+                    <a href="#gameflow" class="nav-btn nav-btn-next">
+                        <span class="nav-text">遊び方</span>
+                        <span class="nav-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 遊び方セクション -->
+        <section id="gameflow" class="gameflow-section">
+            <div class="container">
+                <h2>あそびのながれ</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>うごきをかんじる<br><span class="step-subtitle">Feel the Motion</span></h3>
+                        <p>まず、不思議な「うごき」をじっくり観察してみましょう。これは答えを探す時間ではありません。「この動き、何かに似ているかな？」「どんな気持ちになるかな？」と感じるままに、想像力を自由に羽ばたかせる時間です。これが、すべての物語の最初のタネになります。</p>
+                        <div class="demo-buttons">
+                            <a href="#" class="btn btn-demo btn-jump" id="jumpBtn">
+                                <span class="btn-icon">🦘</span>
+                                <span class="btn-text">ぴょんぴょん (Jump)</span>
+                            </a>
+                            <a href="#" class="btn btn-demo btn-slide" id="slideBtn">
+                                <span class="btn-icon">🛷</span>
+                                <span class="btn-text">ゆらゆら (Sway)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>ステージをみつける<br><span class="step-subtitle">Discover the Stage</span></h3>
+                        <p>一度、背景紙をそっと外してみましょう。ボードの上にはいくつかの星マーク（★）が見えます。実は、魔法のような「うごき」が起こるのは、この星マークの場所だけです。この星の位置関係から、「ここで何が起こるかな？」と、次の物語を想像してみましょう。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>ものがたりをかたちにする<br><span class="step-subtitle">Give Shape to the Story</span></h3>
+                        <p>動きとステージ（星マーク）から心に浮かんだイメージや物語を、手を動かしてキャラクターにしてみましょう。「こんな気持ちだから、こんな顔かな？」「星から星へジャンプする冒険かな？」と、紙やペンを使って、あなただけの主人公を形にしていきます。キャラクターができあがったら、裏側にムーブキットを貼り付けます。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>いのちをふきこむ<br><span class="step-subtitle">Breathe Life into It</span></h3>
+                        <p>背景紙をセットし、完成したキャラクターを星マークの上に乗せて、再び電源をつけ、「うごき」を与えます。すると、あなたの作ったキャラクターが、あなたの想像した物語を演じ始めます。キャラクターがどんなお話をしてくれるか、耳をすましてみましょう。</p>
+                    </div>
+                </div>
+                <div class="section-navigation">
+                    <a href="#setup" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">準備</span>
+                    </a>
+                    <a href="#tips" class="nav-btn nav-btn-next">
+                        <span class="nav-text">ヒント</span>
+                        <span class="nav-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ヒントセクション -->
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <h2>創造の旅をガイドするヒント</h2>
+                <div class="tips-content">
+                    <div class="tip-category">
+                        <h3>「うごき」から想像を広げるヒント</h3>
+                        <p class="tip-subtitle">-デモ動画を見ているとき-</p>
+                        <ul>
+                            <li>「この動き、何に見えるかな？」</li>
+                            <li>「この『ゆらゆら』した感じ、どんな気持ちかな？」</li>
+                        </ul>
+                    </div>
+                    <div class="tip-category">
+                        <h3>「物語」をキャラクターにするヒント</h3>
+                        <p class="tip-subtitle">-お子さんが制作しているとき-</p>
+                        <ul>
+                            <li>「今作っているキャラクターのこと、教えてくれる？」</li>
+                            <li>「青色を選んだんだね。どうしてその色にしたの？」</li>
+                            <li>「そのキャラクターは、どんな性格だと思う？」</li>
+                        </ul>
+                    </div>
+                    <div class="tip-category">
+                        <h3>「いのち」を吹き込むヒント</h3>
+                        <p class="tip-subtitle">-完成した作品について話すとき-</p>
+                        <ul>
+                            <li>「この子の名前はなんて言うの？」</li>
+                            <li>「動き始めたね！今、何をしているところだと思う？」</li>
+                            <li>「この子、どこにお出かけするのかな？」</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section-navigation">
+                    <a href="#gameflow" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">遊び方</span>
+                    </a>
+                    <a href="#troubleshooting" class="nav-btn nav-btn-next">
+                        <span class="nav-text">トラブル</span>
+                        <span class="nav-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- トラブルシューティングセクション -->
+        <section id="troubleshooting" class="troubleshooting-section">
+            <div class="container">
+                <h2>こまったときは</h2>
+                <div class="trouble-item">
+                    <h3>「ボードに乗せても、キャラクターが動かない…」</h3>
+                    <div class="solutions">
+                        <p><strong>解決策1:</strong> キャラクターの裏にあるムーブキット（磁石のパーツ）が、ボードの表面にある<strong>星のマーク（★）</strong>の真上にあるか確認してみてください。少し場所をずらしてみましょう。</p>
+                        <p><strong>解決策2:</strong> 電源ケーブルがしっかり差し込まれ、ボードの小さなライトが点灯しているか確認してみてください。</p>
+                    </div>
+                </div>
+                <div class="section-navigation">
+                    <a href="#tips" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">ヒント</span>
+                    </a>
+                    <a href="#gallery" class="nav-btn nav-btn-next">
+                        <span class="nav-text">作品</span>
+                        <span class="nav-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品ギャラリーセクション -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>みんなの物語ギャラリー</h2>
+                <div class="gallery-content">
+                    <p>世界に一つだけの、素晴らしい物語とキャラクターたちを紹介します！</p>
+                    <div class="gallery-grid">
+                        <!-- 作品カードがここに追加されます -->
+                    </div>
+                </div>
+                <div class="section-navigation">
+                    <a href="#troubleshooting" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">トラブル</span>
+                    </a>
+                    <a href="#about" class="nav-btn nav-btn-next">
+                        <span class="nav-text">私たち</span>
+                        <span class="nav-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 私たちセクション -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Movookが大切にしていること</h2>
+                <p>Movookは、「うごき」が子どもたちの想像力のスイッチを押す、魔法のような瞬間を大切にしています。ここに正解や間違いはありません。一番大切なのは、親子で一緒に「これは何だろう？」と探求し、心に浮かんだ物語を自由に表現する、その創造的なプロセスそのものを楽しむことです。</p>
+                <p>一緒に探検してくれてありがとう！みなさんがどんな素晴らしい物語を創り出すのか、楽しみにしています。</p>
+                <div class="section-navigation">
+                    <a href="#gallery" class="nav-btn nav-btn-prev">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">作品</span>
+                    </a>
+                    <a href="#home" class="nav-btn nav-btn-next">
+                        <span class="nav-text">ホーム</span>
+                        <span class="nav-icon">🏠</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Movook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
